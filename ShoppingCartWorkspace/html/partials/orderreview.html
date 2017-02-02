@@ -1,0 +1,33 @@
+<h2>Order Review</h2>
+<hr>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Cost</td>
+                <td>Description</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in shoppingItems">
+                <td>{{item.itemID}}</td>
+                <td>{{item.itemName}}</td>
+                <td>{{item.itemCost | currency: "Rs."}}</td>
+                <td>{{item.itemDescription}}</td>
+                <td><a ng-click="removeItem($index)"><span class="glyphicon glyphicon-remove"></span></a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Total Cost</td>
+                <td>{{shoppingItems | totalCostFltr: 'itemCost' | currency: "Rs."}}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<button class="btn btn-warning" ng-click="placeOrder()">Place Order</button>

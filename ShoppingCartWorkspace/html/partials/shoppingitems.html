@@ -1,0 +1,29 @@
+<h2>Shopping Items</h2>
+<hr>
+<!--<a href="" data-toggle="modal" data-target="#spinnerModal" id="modalOn"></a>
+<a href="" data-dismiss="modal" id="modalOff"></a>-->
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>Select</td>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Cost</td>
+                <td>Description</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in shoppingItems">
+                <td><input type="checkbox" ng-model="selectedItems.ids[item.itemID]"></td>
+                <td>{{item.itemID}}</td>
+                <td>{{item.itemName}}</td>
+                <td>{{item.itemCost | currency: "Rs."}}</td>
+                <td>{{item.itemDescription}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<button class="btn btn-warning" ng-click="gotoShippingBilling()">Go To Shipping & Billing</button>

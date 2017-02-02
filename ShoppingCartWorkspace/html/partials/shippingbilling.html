@@ -1,0 +1,83 @@
+<h2>Shipping & Billing</h2>
+<hr>
+
+<form>
+    <div class="panel panel-default">
+        <div class="panel-heading">Shipping Details</div>
+        <div class="panel-body">
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" ng-model="shippingBillingDetails.shippingInfo.name">
+                </div>
+                <div class="col-xs-6">
+                    <label for="addressLine1">Address Line 1</label>
+                    <input type="text" class="form-control" id="addressLine1" ng-model="shippingBillingDetails.shippingInfo.addressLine1">
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <label for="addressLine2">Address Line 2</label>
+                    <input type="text" class="form-control" id="addressLine2" ng-model="shippingBillingDetails.shippingInfo.addressLine2">
+                </div>
+                <div class="col-xs-6">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" ng-model="shippingBillingDetails.shippingInfo.city">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <label for="state">State</label>
+                    <input type="text" class="form-control" id="state" ng-model="shippingBillingDetails.shippingInfo.state">
+                </div>
+                <div class="col-xs-6">
+                    <label for="zip">Zip</label>
+                    <input type="text" class="form-control" id="zip" ng-model="shippingBillingDetails.shippingInfo.zip">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Delivery Method</label><br/>
+                <label class="radio-inline">
+                    <input type="radio" ng-model="shippingBillingDetails.shippingInfo.deliveryMethod" value="0">Regular($0.00)
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" ng-model="shippingBillingDetails.shippingInfo.deliveryMethod" value="1">2-Day($15.00)
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" ng-model="shippingBillingDetails.shippingInfo.deliveryMethod" value="2">1-Day($30.00)
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Billing Details</div>
+        <div class="panel-body">
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <label for="nameOnCard">Name On Card</label>
+                    <input type="text" class="form-control" id="nameOnCard" ng-model="shippingBillingDetails.billingInfo.nameOnCard">
+                </div>
+                <div class="col-xs-6">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="number" class="form-control" id="cardNumber" ng-model="shippingBillingDetails.billingInfo.cardNumber">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="date" class="form-control" id="expiryDate" ng-model="shippingBillingDetails.billingInfo.expiryDate">
+                </div>
+                <div class="col-xs-6">
+                    <label for="cvv">CVV</label>
+                    <input type="number" class="form-control" id="cvv" ng-model="shippingBillingDetails.billingInfo.cvv">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="shippingBillingButtonSection">
+        <button class="btn btn-warning" ng-click="gotoOrderReview()">Go To Order Review</button>
+    </div>
+</form>

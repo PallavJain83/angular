@@ -1,0 +1,1 @@
+angular.module('shoppingCartApp', ['ngRoute', 'ui.bootstrap']);

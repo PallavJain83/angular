@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/shoppingcart.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-route.js"></script>
+    <script src="../js/mainmodule.js"></script>
+    <script src="../js/factories/LoginFactory.js"></script>
+    <script src="../js/factories/ShoppingItemsFactory.js"></script>
+    <script src="../js/factories/ShippingBillingFactory.js"></script>
+    <script src="../js/controllers/LoginController.js"></script>
+    <script src="../js/controllers/ShoppingItemsController.js"></script>
+    <script src="../js/controllers/ShippingBillingController.js"></script>
+    <script src="../js/controllers/OrderReviewController.js"></script>
+    <script src="../js/controllers/PlaceOrderController.js"></script>
+    <script src="../js/filters/TotalCostFilter.js"></script>
+</head>
+
+<body ng-app="shoppingCartApp">
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+
+    <script>
+        angular.module('shoppingCartApp').config(function($routeProvider) {
+            $routeProvider.when('/home', {
+                templateUrl: 'partials/login.html',
+                controller: 'loginCtrl'
+            }).when('/shoppingItems', {
+                templateUrl: 'partials/shoppingitems.html',
+                controller: 'shoppingItemsCtrl'
+            }).when('/shippingBilling', {
+                templateUrl: 'partials/shippingbilling.html',
+                controller: 'shippingBillingCtrl'
+            }).when('/orderReview', {
+                templateUrl: 'partials/orderreview.html',
+                controller: 'orderReviewCtrl'
+            }).when('/placeOrder', {
+                templateUrl: 'partials/orderconfirmation.html',
+                controller: 'placeOrderCtrl'
+            }).otherwise({
+                redirectTo: '/home'
+            })
+        })
+    </script>
+</body>
+
+</html>
